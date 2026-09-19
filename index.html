@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
+    <title>Mi Sitio Web - Pagos y Servicios</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,10 +20,7 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 10px #ccc;
-
-
         }
-        
         h1 {
             color: #1a2a3a;
             margin-bottom: 15px;
@@ -33,17 +30,70 @@
             color: #555;
             font-size: 1.1em;
         }
+        .services {
+            margin: 25px 0;
+            text-align: left;
+            background: #f9fbfd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0070ba;
+        }
+        .payment-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+        }
+        .paypal-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #0070ba;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .local-pay {
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #444;
+            background: #f1f8e9;
+            padding: 10px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>¡Bienvenido a mi sitio web!</h1>
-        <p>Aquí puedes agregar la 
-        información de tu página.</p>
+        <h1>Nuestros Servicios</h1>
+        <p>Aquí puedes agregar la información de tu página y los servicios profesionales que ofreces.</p>
+        
+        <div class="services">
+            <h3>¿Qué incluye?</h3>
+            <p>• Asesorías y soluciones personalizadas.<br>
+            • Atención rápida, segura y profesional.</p>
+        </div>
 
+        <div class="payment-box">
+            <h3>Métodos de Pago</h3>
+            
+            <!-- Opción Internacional (PayPal) -->
+            <p><strong>Pago Internacional:</strong></p>
+            <a href="https://www.paypal.com/paypalme/tuusuario" class="paypal-b
+tn" target="_blank">Pagar con PayPal</a>
 
+            <!-- Opción Nacional (Pago Móvil / Local) -->
+            <div class="local-pay">
+                <p><strong>Pago Móvil (Venezuela):</strong><br>
+                Banco: [Tu Banco]<br>
+                Teléfono: [0412-0000000]<br>
+                Cédula: [V-00000000]</p>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
