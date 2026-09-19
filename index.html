@@ -1,220 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendaciones de Productos y Repuestos</title>
-    <style>
-        /* Variables de color y estilos generales */
-        :root {
-            --primary-color: #1e293b;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #334155;
-            --text-muted: #64748b;
-            --border-radius: 12px;
-            
-            /* Colores por tienda */
-            --aliexpress-color: #ff4747;
-            --ebay-color: #0064d2;
-            --mercadolibre-color: #ffe600;
-            --mercadolibre-text: #2d3277;
-            --generic-color: #2563eb;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Contenedor Grid Responsivo */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Tarjeta de Producto */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .badge {
-            align-self: flex-start;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            background-color: #e2e8f0;
-            color: #475569;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .card-description {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        /* Botones personalizados según la tienda */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Variaciones de botones por tienda */
-        .btn-aliexpress {
-            background-color: var(--aliexpress-color);
-            color: #ffffff;
-        }
-
-        .btn-ebay {
-            background-color: var(--ebay-color);
-            color: #ffffff;
-        }
-
-        .btn-mercadolibre {
-            background-color: var(--mercadolibre-color);
-            color: var(--mercadolibre-text);
-        }
-
-        .btn-generic {
-            background-color: var(--generic-color);
-            color: #ffffff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos y Repuestos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: #666;
+      font-size: 1rem;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .badge {
+      align-self: flex-start;
+      background-color: #eef2ff;
+      color: #4f46e5;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+    .card-description {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 16px;
+      flex-grow: 1;
+      line-height: 1.4;
+    }
+    .card a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: #ff4747;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 0;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+    .card a:hover {
+      background-color: #e03e3e;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Catálogo de Productos y Repuestos</h1>
-        <p>Encuentra las mejores opciones en distintas tiendas online</p>
-    </header>
+  <header>
+    <h1>Catálogo de Productos y Repuestos</h1>
+    <p>Encuentra las mejores opciones en diagnóstico, accesorios y herramientas</p>
+  </header>
 
-    <div class="grid-container">
+  <div class="grid-container">
 
-        <!-- Producto 1: Enlace a AliExpress -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=500&auto=format&fit=crop" alt="Escáner OBD2" class="card-img">
-            <div class="card-body">
-                <span class="badge">Diagnóstico Automotriz</span>
-                <h2 class="card-title">Escáner Diagnóstico OBD2 Multimarca</h2>
-                <p class="card-description">Lector de códigos de falla en motor, borrado de Check Engine y datos en tiempo real.</p>
-                <a href="https://s.click.aliexpress.com/e/_c4OxT4id" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-aliexpress">
-                    Ver en AliExpress
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 2: Enlace a eBay -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop" alt="Tacómetro Digital Moto" class="card-img">
-            <div class="card-body">
-                <span class="badge">Accesorios Moto</span>
-                <h2 class="card-title">Tacómetro Digital Universal con Led</h2>
-                <p class="card-description">Indicador de RPM, velocidad y nivel de gasolina. Resistente al agua e intemperie.</p>
-                <a href="AQUI_TU_ENLACE_EBAY" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-ebay">
-                    Ver en eBay
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 3: Enlace a Mercado Libre -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&auto=format&fit=crop" alt="Juego de Herramientas" class="card-img">
-            <div class="card-body">
-                <span class="badge">Herramientas</span>
-                <h2 class="card-title">Juego de Dados y Ráchet Mecánico</h2>
-                <p class="card-description">Set completo en acero cromo vanadio ideal para mantenimiento de autos y motocicletas.</p>
-                <a href="AQUI_TU_ENLACE_MERCADOLIBRE" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-mercadolibre">
-                    Ver en Mercado Libre
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 4: Enlace a Cualquier Otra Tienda -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=500&auto=format&fit=crop" alt="Luces LED" class="card-img">
-            <div class="card-body">
-                <span class="badge">Iluminación</span>
-                <h2 class="card-title">Bombillos LED H4 de Alta Potencia</h2>
-                <p class="card-description">Kit de iluminación blanca 6000K con sistema de enfriamiento integrado.</p>
-                <a href="AQUI_TU_ENLACE_TIENDA" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-generic">
-                    Comprar / Ver Oferta
-                </a>
-            </div>
-        </div>
-
+    <!-- Producto 1: Escáner OBD2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="Escáner OBD2">
+      <div class="card-body">
+        <span class="badge">Diagnóstico Automotriz</span>
+        <h2 class="card-title">Escáner OBD2 Automotriz</h2>
+        <p class="card-description">Lectura y borrado de fallas de motor en tiempo real. Soporta múltiples protocolos.</p>
+        <a href="https://s.click.aliexpress.com/e/_c2x1mhc9" target="_blank" rel="nofollow">
+          Ver en AliExpress
+        </a>
+      </div>
     </div>
+
+    <!-- Producto 2: Tacómetro Digital Universal -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80" alt="Tacómetro Digital Moto">
+      <div class="card-body">
+        <span class="badge">Accesorios Moto</span>
+        <h2 class="card-title">Tacómetro Digital Universal</h2>
+        <p class="card-description">Indicador de RPM, velocidad, marcha y combustible en pantalla LCD digital de 12V.</p>
+        <a href="https://s.click.aliexpress.com/e/_c2x1mhc9" target="_blank" rel="nofollow">
+          Ver en AliExpress
+        </a>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
