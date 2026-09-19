@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento Automotriz | Herramientas y Accesorios</title>
+    <title>Recomendaciones de Productos y Repuestos</title>
     <style>
+        /* Variables de color y estilos generales */
+        :root {
+            --primary-color: #1e293b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --text-muted: #64748b;
+            --border-radius: 12px;
+            
+            /* Colores por tienda */
+            --aliexpress-color: #ff4747;
+            --ebay-color: #0064d2;
+            --mercadolibre-color: #ffe600;
+            --mercadolibre-text: #2d3277;
+            --generic-color: #2563eb;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,175 +30,191 @@
         }
 
         body {
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
         }
 
-        /* Encabezado */
         header {
-            background-color: #1a252f;
-            color: #fff;
-            padding: 1.5rem 1rem;
             text-align: center;
+            margin-bottom: 40px;
         }
 
         header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 0.95rem;
-            color: #bdc3c7;
+            color: var(--text-muted);
+            font-size: 1.1rem;
         }
 
-        /* Banner de Transparencia de Afiliados */
-        .affiliate-notice {
-            background-color: #eef2f5;
-            border-left: 4px solid #3498db;
-            padding: 0.75rem 1rem;
-            max-width: 1000px;
-            margin: 1rem auto;
-            font-size: 0.85rem;
-            color: #555;
-            border-radius: 4px;
-        }
-
-        /* Contenedor Principal */
-        .container {
-            max-width: 1000px;
-            margin: 1.5rem auto;
-            padding: 0 1rem;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 0.2rem;
-        }
-
-        /* Grid de Productos */
-        .grid {
+        /* Contenedor Grid Responsivo */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
+        /* Tarjeta de Producto */
         .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .card img {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
             width: 100%;
-            height: 180px;
-            object-fit: contain;
-            background-color: #ffffff;
-            border-radius: 4px;
-            margin-bottom: 1rem;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .card h3 {
-            font-size: 1.1rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             flex-grow: 1;
         }
 
-        .btn-amazon {
+        .badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background-color: #e2e8f0;
+            color: #475569;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Botones personalizados según la tienda */
+        .btn {
             display: block;
+            width: 100%;
+            padding: 12px;
             text-align: center;
-            background-color: #ff9900;
-            color: #111;
-            font-weight: bold;
-            padding: 0.6rem 1rem;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.2s ease;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: opacity 0.2s ease;
         }
 
-        .btn-amazon:hover {
-            background-color: #e68a00;
+        .btn:hover {
+            opacity: 0.9;
         }
 
-        /* Pie de página */
-        footer {
-            background-color: #1a252f;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1.5rem 1rem;
-            margin-top: 2rem;
-            font-size: 0.85rem;
+        /* Variaciones de botones por tienda */
+        .btn-aliexpress {
+            background-color: var(--aliexpress-color);
+            color: #ffffff;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
+        .btn-ebay {
+            background-color: var(--ebay-color);
+            color: #ffffff;
+        }
+
+        .btn-mercadolibre {
+            background-color: var(--mercadolibre-color);
+            color: var(--mercadolibre-text);
+        }
+
+        .btn-generic {
+            background-color: var(--generic-color);
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Mantenimiento y Herramientas Automotrices</h1>
-        <p>Guías, accesorios y herramientas recomendadas para el cuidado de tu vehículo</p>
+        <h1>Catálogo de Productos y Repuestos</h1>
+        <p>Encuentra las mejores opciones en distintas tiendas online</p>
     </header>
 
-    <div class="container">
-        <!-- Aviso de Afiliados obligatorio para Amazon -->
-        <div class="affiliate-notice">
-            <strong>Aviso de Afiliación:</strong> Como participante del Programa de Afiliados de Amazon, este sitio obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.
-        </div>
+    <div class="grid-container">
 
-        <h2 class="section-title">Herramientas Básicas Recomendadas</h2>
-
-        <div class="grid">
-            <!-- Producto 1 -->
-            <div class="card">
-                <img src="https://m.media-amazon.com/images/I/81+X3z7uAAL._AC_SL1500_.jpg" alt="Juego de Llaves y Dados">
-                <h3>Juego de Llaves y Dados</h3>
-                <p>Set esencial de herramientas mecánicas para reparaciones generales y mantenimiento preventivo.</p>
-                <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Ver en Amazon</a>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="card">
-                <img src="https://m.media-amazon.com/images/I/71N-4d8wU2L._AC_SL1500_.jpg" alt="Escáner OBD2">
-                <h3>Escáner Diagnóstico OBD2</h3>
-                <p>Lector de códigos para diagnosticar fallas de motor y borrar la luz de "Check Engine".</p>
-                <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Ver en Amazon</a>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="card">
-                <img src="https://m.media-amazon.com/images/I/61I2oP+BvfL._AC_SL1500_.jpg" alt="Medidor Digital de Presión">
-                <h3>Medidor Digital de Presión</h3>
-                <p>Herramienta clave para mantener la presión correcta en los neumáticos y optimizar el consumo de combustible.</p>
-                <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Ver en Amazon</a>
+        <!-- Producto 1: Enlace a AliExpress -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=500&auto=format&fit=crop" alt="Escáner OBD2" class="card-img">
+            <div class="card-body">
+                <span class="badge">Diagnóstico Automotriz</span>
+                <h2 class="card-title">Escáner Diagnóstico OBD2 Multimarca</h2>
+                <p class="card-description">Lector de códigos de falla en motor, borrado de Check Engine y datos en tiempo real.</p>
+                <a href="AQUI_TU_ENLACE_ALIEXPRESS" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-aliexpress">
+                    Ver en AliExpress
+                </a>
             </div>
         </div>
+
+        <!-- Producto 2: Enlace a eBay -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&auto=format&fit=crop" alt="Tacómetro Digital Moto" class="card-img">
+            <div class="card-body">
+                <span class="badge">Accesorios Moto</span>
+                <h2 class="card-title">Tacómetro Digital Universal con Led</h2>
+                <p class="card-description">Indicador de RPM, velocidad y nivel de gasolina. Resistente al agua e intemperie.</p>
+                <a href="AQUI_TU_ENLACE_EBAY" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-ebay">
+                    Ver en eBay
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 3: Enlace a Mercado Libre -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&auto=format&fit=crop" alt="Juego de Herramientas" class="card-img">
+            <div class="card-body">
+                <span class="badge">Herramientas</span>
+                <h2 class="card-title">Juego de Dados y Ráchet Mecánico</h2>
+                <p class="card-description">Set completo en acero cromo vanadio ideal para mantenimiento de autos y motocicletas.</p>
+                <a href="AQUI_TU_ENLACE_MERCADOLIBRE" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-mercadolibre">
+                    Ver en Mercado Libre
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 4: Enlace a Cualquier Otra Tienda -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=500&auto=format&fit=crop" alt="Luces LED" class="card-img">
+            <div class="card-body">
+                <span class="badge">Iluminación</span>
+                <h2 class="card-title">Bombillos LED H4 de Alta Potencia</h2>
+                <p class="card-description">Kit de iluminación blanca 6000K con sistema de enfriamiento integrado.</p>
+                <a href="AQUI_TU_ENLACE_TIENDA" target="_blank" rel="noopener noreferrer sponsored" class="btn btn-generic">
+                    Comprar / Ver Oferta
+                </a>
+            </div>
+        </div>
+
     </div>
-
-    <footer>
-        <p>&copy; 2026 Mantenimiento Automotriz. Todos los derechos reservados.</p>
-        <p>As an Amazon Associate I earn from qualifying purchases.</p>
-    </footer>
 
 </body>
 </html>
